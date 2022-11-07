@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  front:
+    container_name: purchase-front
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    tty: true
+    environment:
+      - HOST=0.0.0.0
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:8080
+    command:  bash -c "npm run serve"
