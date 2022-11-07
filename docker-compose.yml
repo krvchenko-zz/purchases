@@ -4,7 +4,7 @@ services:
   front:
     container_name: purchase-front
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
     restart: always
     tty: true
@@ -14,4 +14,4 @@ services:
       - ./:/app
     ports:
       - 8080:8080
-    command:  bash -c "npm run serve"
+    command:  bash -c "npm install && npm run serve"
